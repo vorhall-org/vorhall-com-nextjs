@@ -6,6 +6,8 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'Vorhall',
   description: 'Our claim will go here',
+  robots: 'noindex',
+  
 }
 
 export default function RootLayout({ children }) {
