@@ -1,5 +1,7 @@
 {
-  "Index": {
-    "title": "Hello world!"
+  "navigation": {
+    "home": "Start",
+    "about": "About us",
+    "services": "What we do"
   }
 }
