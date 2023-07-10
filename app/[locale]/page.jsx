@@ -1,14 +1,14 @@
 import styles from './page.module.css';
 import { getDictionary } from '../../get-dictionary';
-import LocaleSwitcher from './components/locale-switcher/locale-switcher';
+import LocaleSwitcher from '../components/locale-switcher/locale-switcher';
 
 export default async function Home({params: { locale }}) {
-  const dictionary = (await getDictionary(locale)).Index
+  const dictionary = await getDictionary(locale);
 
   return (
     <main className={styles.main}>
-      <p>{dictionary.title}</p>
       <hr />
+      <h1>Home page</h1>
       <p>Current locale: {locale}</p>
       <hr />
       <LocaleSwitcher />
