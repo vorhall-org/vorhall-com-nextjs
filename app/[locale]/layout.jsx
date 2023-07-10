@@ -1,6 +1,8 @@
 import '../styles/index.css';
 import { Inter } from 'next/font/google';
 import { i18n } from '../../i18n-config';
+import Nav from '../components/nav/nav';
+import navData from '../nav-data';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,10 +16,15 @@ export const metadata = {
   robots: 'noindex',
 }
 
-export default function RootLayout({ children, params }) {
+export default async function RootLayout({ children, params }) {
+  const navItems = await navData(params.locale);
+
   return (
-    <html lang={params.lang}>
-      <body className={inter.className}>{children}</body>
+    <html lang={params.locale}>
+      <body className={inter.className}>
+        <Nav items={navItems} />
+        {children}
+      </body>
     </html>
   )
 }
