@@ -1,9 +1,8 @@
 'use client'
-import 'client-only';
 
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import { i18n } from '../../../../i18n-config'
+import { i18n } from '../../../i18n-config'
 
 export default function LocaleSwitcher() {
   const pathName = usePathname()
