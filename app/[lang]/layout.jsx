@@ -17,10 +17,10 @@ export const metadata = {
 }
 
 export default async function RootLayout({ children, params }) {
-  const navItems = await navData(params.locale);
+  const navItems = await navData(params.lang);
 
   return (
-    <html lang={params.locale}>
+    <html lang={params.lang}>
       <body className={inter.className}>
         <Nav items={navItems} />
         {children}
