@@ -1,6 +1,6 @@
 import '../styles/index.css';
 import { Inter } from 'next/font/google';
-import { i18n } from '../../i18n-config';
+import { i18n } from '../i18n-config';
 import Nav from '../components/nav/nav';
 import navData from '../nav-data';
 
