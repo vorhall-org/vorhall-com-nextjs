@@ -14,6 +14,8 @@ export async function generateStaticParams() {
 export const metadata = {
   title: 'Vorhall',
   description: 'Our claim will go here',
+
+  // TODO: remove on launch ;)
   robots: 'noindex',
 }
 
