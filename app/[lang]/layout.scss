@@ -1,0 +1,14 @@
+@import '~/app/styles/global/_variables.scss';
+@import '~/app/styles/global/reset';
+
+body {
+  font-size: calc(var(--font-size-base) * 1px);
+  color: rgb(var(--foreground-rgb));
+  background-color: rgb(var(--background-rgb));
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
