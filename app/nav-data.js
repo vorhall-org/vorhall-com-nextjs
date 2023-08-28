@@ -1,6 +1,6 @@
 import 'server-only';
 
-import { getDictionary } from './get-dictionary';
+import { getDictionary } from '../get-dictionary';
 
 const navData = async (locale) => {
   const dictionary = await getDictionary(locale);
