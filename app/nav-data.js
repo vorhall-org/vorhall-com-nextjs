@@ -8,7 +8,7 @@ const navData = async (locale) => {
   return [
     {
       text: dictionary.navigation.home,
-      link: '/',
+      link: '.',
     },
     {
       text: dictionary.navigation.about,
