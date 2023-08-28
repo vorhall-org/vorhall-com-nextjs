@@ -1,0 +1,8 @@
+@import url('./variables');
+@import url('./reset');
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}

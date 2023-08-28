@@ -1,0 +1,1 @@
+- custom 404 (not-found.jsx). not working in the dynamic [lang] folder.
