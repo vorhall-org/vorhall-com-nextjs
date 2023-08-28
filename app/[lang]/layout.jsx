@@ -1,4 +1,4 @@
-import '../styles/index.css';
+import './layout.scss';
 import { Inter } from 'next/font/google';
 import { i18n } from '../../i18n-config';
 import Nav from '../components/nav/nav';
