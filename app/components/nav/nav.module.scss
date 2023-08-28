@@ -1,0 +1,14 @@
+@use '~/app/styles/mixins' as mx;
+@use '~/app/styles/functions' as fn;
+@use '~/app/styles/mediaqueries' as mq;
+
+.item {
+  @include mx.sample;
+
+  font-size: fn.toRem(16);
+
+  @include mq.mq($from: small) {
+    font-size: fn.toRem(32);
+    color: red;
+  }
+}
