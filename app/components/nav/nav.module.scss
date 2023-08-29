@@ -3,12 +3,18 @@
 @use '~/app/styles/mediaqueries' as mq;
 
 .item {
-  @include mx.sample;
-
   font-size: fn.toRem(16);
 
-  @include mq.mq($from: small) {
+  @include mq.breakpoint($from: small) {
     font-size: fn.toRem(32);
     color: red;
+  }
+
+  @include mq.mouseOnly {
+    color: green;
+  }
+
+  @include mq.reducedMotion {
+    color: brown;
   }
 }
