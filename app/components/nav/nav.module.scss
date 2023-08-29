@@ -1,59 +1,92 @@
-// @use '~/app/styles/mixins' as mx;
-// @use '~/app/styles/functions' as fn;
+@use '~/app/styles/mixins' as mx;
+@use '~/app/styles/functions' as fn;
 @use '~/app/styles/mediaqueries' as mq;
 
-.nav {
+$navHeightMobile: 50;
+$navHeightDesktop: 70;
 
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: fn.toRem($navHeightMobile);
+  background-color: grey;
+
+  @include mq.breakpoint($from: small) {
+    justify-content: flex-start;
+    height: fn.toRem($navHeightDesktop);
+  }
 }
 
-// .menuButton {
-//   color: red;
+.logo {
+  width: fn.toRem(80);
+  height: fn.toRem(50);
+  background-color: bisque;
+}
 
-//   @include mq.breakpoint($from: small) {
-//     display: none;
-//   }
-// }
+.menuButton {
+  color: red;
+  height: 100%;
+  border: none;
+  cursor: pointer;
 
-// .menuButtonHiddenText {
-//   display: none;
-// }
+  @include mq.breakpoint($from: small) {
+    display: none;
+  }
+}
 
-// .menuButtonIcon {
+.menuButtonOpen {
+  color: blue;
+}
 
-// }
+.menuButtonClosed {
+  color: green;
+}
+
+.menuButtonHiddenText {
+  @include mx.srOnly;
+}
+
+.menuButtonIcon {
+  height: 100%;
+  width: auto;
+}
 
 .list {
   display: none;
+  list-style-type: none;
 
   @include mq.breakpoint($from: small) {
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 
-.listVisible {
+.listMobile {
   display: block;
+  position: absolute;
+  top: fn.toRem($navHeightMobile);
+  left: 0;
+  background-color: rgb(var(--background-rgb));
+  border: 1px solid rgb(var(--foreground-rgb));
+  z-index: 999;
 }
 
 .item {
-
-  /*
-  font-size: fn.toRem(16);
-
-  @include mq.breakpoint($from: small) {
-    font-size: fn.toRem(32);
-    color: red;
-  }
-
-  @include mq.mouseOnly {
-    color: green;
-  }
-
-  @include mq.reducedMotion {
-    color: brown;
-  }
-  */
+  padding-left: fn.toRem(20);
 }
 
 .link {
+  transition: color 200ms ease-in;
 
+  @include mq.reducedMotion {
+    transition: none;
+  }
+
+  &:hover,
+  &:focus {
+    @include mq.mouseOnly {
+      color: green;
+    }
+  }
 }
