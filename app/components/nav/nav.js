@@ -2,13 +2,15 @@
 
 import Link from 'next/link';
 import styles from './nav.module.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import clsx from 'clsx';
 import Image from 'next/image';
 import openIcon from '../../../public/icons/menu.svg';
 import closeIcon from '../../../public/icons/close.svg';
 
 export default function Nav({ items, strings }) {
+  const menuListId = 'menu-list';
+
   // ------------------
   // State
   // ------------------
@@ -23,10 +25,48 @@ export default function Nav({ items, strings }) {
     setMenuOpen(!menuOpen);
   }
 
+  // event handler to listen to window clicks
+  const handleWindowClick = (evt) => {
+
+    if (!menuOpen) {
+      return;
+    }
+
+    const evtPaths = evt.composedPath();
+    let ulFound = false;
+
+    evtPaths.forEach((elem) => {
+      const isUl = elem.id === menuListId;
+      const isMenuButton = elem.getAttribute && elem.getAttribute('aria-controls') === menuListId;
+
+      if (isUl || isMenuButton) {
+        ulFound = true;
+      }
+    });
+
+    if (!ulFound) {
+      setMenuOpen(false);
+    }
+  }
+
+  // ------------------
+  // Effects
+  // ------------------
+
+  // listen to window clicks
+  useEffect(() => {
+    const onWindowClick = (evt) => handleWindowClick(evt);
+
+    window.addEventListener('click', onWindowClick);
+
+    return () => {
+      window.removeEventListener('click', onWindowClick);
+    }
+  })
+
   // ------------------
   // Render
   // ------------------
-  const menuListId = 'menu-list';
 
   return (
     <nav className={styles.nav}>
