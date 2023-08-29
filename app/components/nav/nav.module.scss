@@ -73,7 +73,9 @@ $navHeightDesktop: 70;
 }
 
 .item {
-  padding-left: fn.toRem(20);
+  @include mq.breakpoint($from: small) {
+    padding-left: fn.toRem(20);
+  }
 }
 
 .link {
