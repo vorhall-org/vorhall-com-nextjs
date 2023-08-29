@@ -1,3 +1,11 @@
-@mixin sample {
-  color: green;
+@mixin reducedMotion() {
+  @media (prefers-reduced-motion) {
+    @content;
+  }
+}
+
+@mixin mouseOnly() {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
 }

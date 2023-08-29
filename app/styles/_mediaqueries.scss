@@ -1,4 +1,27 @@
+// ##############################
+// Reduced Motion
+// ##############################
+
+@mixin reducedMotion() {
+  @media (prefers-reduced-motion) {
+    @content;
+  }
+}
+
+// ##############################
+// Mouse only
+// ##############################
+
+@mixin mouseOnly() {
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}
+
+// ##############################
+// Breakpoints
 // Inspired by: https://github.com/sass-mq/sass-mq
+// ##############################
 
 // breakpoints
 $breakpoint-zero-min: 0;
@@ -31,7 +54,7 @@ $mq-media-type: all !default;
   }
 }
 
-@mixin mq(
+@mixin breakpoint(
   $from: false,
   $to: false,
   $and: false,
