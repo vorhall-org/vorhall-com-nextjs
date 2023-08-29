@@ -24,13 +24,13 @@
 // ##############################
 
 // breakpoints
-$breakpoint-zero-min: 0;
-$breakpoint-micro-min: 360;
-$breakpoint-small-min: 600;
-$breakpoint-medium-min: 840;
-$breakpoint-large-min: 1024;
-$breakpoint-wide-min: 1280;
-$breakpoint-ultra-min: 1440;
+$breakpoint-zero-min: var(--breakpoint-zero);
+$breakpoint-micro-min: var(--breakpoint-micro);
+$breakpoint-small-min: var(--breakpoint-small);
+$breakpoint-medium-min: var(--breakpoint-medium);
+$breakpoint-large-min: var(--breakpoint-large);
+$breakpoint-wide-min: var(--breakpoint-wide);
+$breakpoint-ultra-min: var(--breakpoint-ultra);
 
 // breakpoint map
 $mq-breakpoints: (

@@ -1,11 +1,26 @@
 :root {
+
+  // font
   --font-size-base: 16;
+
+  // colors
   --foreground-rgb: 0, 0, 0;
   --background-rgb: 255, 255, 255;
+
+  // breakpoints
+  --breakpoint-zero: 0;
+  --breakpoint-micro: 360;
+  --breakpoint-small: 600;
+  --breakpoint-medium: 840;
+  --breakpoint-large: 1024;
+  --breakpoint-wide: 1280;
+  --breakpoint-ultra: 1440;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
+
+    // colors
     --foreground-rgb: 255, 255, 255;
     --background-rgb: 0, 0, 0;
   }
