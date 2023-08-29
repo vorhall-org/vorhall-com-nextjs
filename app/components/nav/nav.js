@@ -56,11 +56,18 @@ export default function Nav({ items, strings }) {
   // listen to window clicks
   useEffect(() => {
     const onWindowClick = (evt) => handleWindowClick(evt);
+    const onEscape = (evt) => {
+      if (evt.key === 'Escape') {
+        setMenuOpen(false);
+      }
+    }
 
     window.addEventListener('click', onWindowClick);
+    window.addEventListener('keydown', onEscape);
 
     return () => {
       window.removeEventListener('click', onWindowClick);
+      window.removeEventListener('keydown', onEscape);
     }
   })
 
