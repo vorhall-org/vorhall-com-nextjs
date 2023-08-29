@@ -2,7 +2,41 @@
 @use '~/app/styles/functions' as fn;
 @use '~/app/styles/mediaqueries' as mq;
 
+.nav {
+
+}
+
+.menuButton {
+  color: red;
+
+  @include mq.breakpoint($from: small) {
+    display: none;
+  }
+}
+
+.menuButtonHiddenText {
+  display: none;
+}
+
+.menuButtonIcon {
+
+}
+
+.list {
+  display: none;
+
+  @include mq.breakpoint($from: small) {
+    display: block;
+  }
+}
+
+.listVisible {
+  display: block;
+}
+
 .item {
+
+  /*
   font-size: fn.toRem(16);
 
   @include mq.breakpoint($from: small) {
@@ -17,4 +51,9 @@
   @include mq.reducedMotion {
     color: brown;
   }
+  */
+}
+
+.link {
+
 }
