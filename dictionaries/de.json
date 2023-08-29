@@ -3,6 +3,7 @@
     "home": "Start",
     "about": "Über uns",
     "services": "Was wir anbieten",
-    "menuButton": "Navigation"
+    "openNavigation": "Navigation öffnen",
+    "closeNavigation": "Navigation schliessen"
   }
 }
