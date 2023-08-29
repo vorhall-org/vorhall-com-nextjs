@@ -1,0 +1,17 @@
+@use '~/app/styles/mediaqueries' as mq;
+
+.menuButton {
+  color: red;
+
+  @include mq.breakpoint($from: small) {
+    display: none;
+  }
+}
+
+.menuButtonHiddenText {
+  display: none;
+}
+
+.menuButtonIcon {
+
+}

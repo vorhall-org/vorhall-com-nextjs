@@ -1,26 +1,26 @@
-@use '~/app/styles/mixins' as mx;
-@use '~/app/styles/functions' as fn;
+// @use '~/app/styles/mixins' as mx;
+// @use '~/app/styles/functions' as fn;
 @use '~/app/styles/mediaqueries' as mq;
 
 .nav {
 
 }
 
-.menuButton {
-  color: red;
+// .menuButton {
+//   color: red;
 
-  @include mq.breakpoint($from: small) {
-    display: none;
-  }
-}
+//   @include mq.breakpoint($from: small) {
+//     display: none;
+//   }
+// }
 
-.menuButtonHiddenText {
-  display: none;
-}
+// .menuButtonHiddenText {
+//   display: none;
+// }
 
-.menuButtonIcon {
+// .menuButtonIcon {
 
-}
+// }
 
 .list {
   display: none;

@@ -4,22 +4,9 @@ import Link from 'next/link';
 import styles from './nav.module.scss';
 import { useState } from 'react';
 import clsx from 'clsx';
+import NavButton from '../nav-button/nav-button';
 
 export default function Nav({ items, strings }) {
-
-  // ------------------
-  // State
-  // ------------------
-
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  // ------------------
-  // Event Handlers
-  // ------------------
-
-  function handleMenuClick() {
-    setMenuOpen(!menuOpen);
-  }
 
   // ------------------
   // Render
@@ -27,30 +14,12 @@ export default function Nav({ items, strings }) {
 
   return (
     <nav className={styles.nav}>
-
-      <button
-        className={styles.menuButton}
-        aria-expanded={menuOpen}
-        aria-controls="menu-list"
-        onClick={handleMenuClick}
-      >
-
-        <span className={styles.menuButtonHiddenText}>{strings.menuButton}</span>
-
-        <span
-          className={styles.menuButtonIcon}
-          aria-hidden
-          role="presentation"
-        >X</span>
-
-      </button>
-
-
+      <NavButton strings={strings} />
       <ul
         className={
           clsx(
             styles.list,
-            menuOpen ? styles.listVisible : ''
+            true ? styles.listVisible : ''
           )
         }
         id="menu-list"
