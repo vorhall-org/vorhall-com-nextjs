@@ -2,6 +2,7 @@
   "navigation": {
     "home": "Start",
     "about": "Über uns",
-    "services": "Was wir anbieten"
+    "services": "Was wir anbieten",
+    "menuButton": "Navigation"
   }
 }
