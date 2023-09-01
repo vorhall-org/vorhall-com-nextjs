@@ -15,9 +15,17 @@ export async function generateStaticParams() {
 export const metadata = {
   title: 'Vorhall',
   description: 'Our claim will go here',
-
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: 'cyan' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
+  ],
   // TODO: remove on launch ;)
   robots: 'noindex',
+  other: {
+    httpEquiv: {
+      'Content-Security-Policy': 'upgrade-insecure-requests'
+    }
+  }
 }
 
 export default async function RootLayout({ children, params }) {
